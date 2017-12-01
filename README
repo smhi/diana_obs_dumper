@@ -1,0 +1,59 @@
+filewatcher - Version 1.0.0
+Sends signals using coserver4 when the contents of a directory has changed, or a file of specified type has changed in some way.
+
+Description
+===========
+The filewatcher uses stat and QDir to poll directories or files for changedes. The application is threaded and only one directory or file type is handled by each thread. When a thread discovers a change, it sends an signal by the Qt signal and slot mechanism and the receiving Qt object formats a message and sends it to the coserver4.
+The coserver4 distributes it to the diana instanses that are connected to the coserver4.
+It should be possible to modify tseries so it could also use signals from filewatcher.
+
+Command line arguments
+======================
+Example:
+
+./filewatcher -v -w '/data/prod/diana/datadir/obs/*.lp2,/data/prod/diana/datadir/satellit,/data/prodtest/diana/server/datadir/radar' -c '/data/proj/diana/NYVIS_DEV/Yngve.Einarsson/DIANA/linda/local/src/coserver4/bin/coserver4 -v & ' &
+
+-v tells filewatcher to show a user interface in the same way as coserver4 does.
+-w is the directories/file types to watch
+-c is the path to coserver4
+
+NOTE the format *.lp2. The allowed format is the same as glob or QDir can handle. filewatcher is implemeted so it should always watch the youngest file with extension *.lp2 or whatever on the actual directory.
+
+
+Requirements
+============
+Qt 4.8 or later. Thread support in Qt.
+miLogger,puTools,qUtilities and coserver.
+https://github.com/metno/metlibs-milogger
+https://github.com/metno/metlibs-putools
+https://github.com/metno/metlibs-qutilities
+https://github.com/metno/metlibs-coserver
+
+
+
+License
+=======
+Diana - A Free Meteorological Visualisation Tool
+Copyright (C) 2006-2016 met.no and SMHI
+Contact information:
+Norwegian Meteorological Institute
+Box 43 Blindern
+0313 OSLO  NORWAY
+email: diana@met.no
+
+This application is part of Diana
+
+Diana is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Diana is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Diana; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+.
