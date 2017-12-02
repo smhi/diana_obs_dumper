@@ -1,6 +1,6 @@
 bin_PROGRAMS = diana_obs_dumper
 
-filewatcher_SOURCES =   \
+diana_obs_dumper_SOURCES =   \
 	main.cc       \
 	diObsRoad.cc
 

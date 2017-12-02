@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
   opt[6].hasArg = false;
 
   miCommandLine cl(opt, argc, argv);
-  string filename, databasefile, stationfile, headerfile, time;
+  string filename, databasefile, stationfile, headerfile, timestring;
   int timeDiff;
   string usage("Arguments: -f <filename> -d <databasefile> (moraconf) -s <stationfile> -H <headerfile> -t <time> (yyyymmddHHMMSS) -D <timeDiff> (59)");
   if (cl.hasFlag('h')) {

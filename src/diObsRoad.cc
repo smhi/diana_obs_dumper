@@ -55,9 +55,7 @@ ObsRoad::ObsRoad(const std::string &filename, const std::string &databasefile, c
 #ifdef DEBUGPRINT
 	std::cerr << "++ ObsRoad::ObsRoad() ++" << std::endl;
 #endif
-	// clear members
-
-	headerRead = false;
+	// init members
   filename_ = filename;
   databasefile_ = databasefile;
   stationfile_ = stationfile;
@@ -66,7 +64,6 @@ ObsRoad::ObsRoad(const std::string &filename, const std::string &databasefile, c
   timeDiff_ = timeDiff;
 	if (!breadData) {
 		readHeader();
-		headerRead = true;
 	}
 	else
 		readData();
