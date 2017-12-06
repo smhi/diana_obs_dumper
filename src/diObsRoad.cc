@@ -114,7 +114,7 @@ void ObsRoad::readHeader()
 			line = "[COLUMNS";
 			lines.push_back(line);
 			// The fixed part..
-			line = "Name:id: Date:d: Time:t: Lat:lat: Lon:lon: ";
+			line = "Name:id: Date:d: Time:t: Lat:lat: Lon:lon: data_type:s: auto:r: isdata:r: ";
 			// the dynamic part
 			// the data value parameters
 		for (i = 0; i < params->size(); i++)
@@ -182,7 +182,7 @@ void ObsRoad::readRoadData()
 	std::string str;
 	map<int, std::string>::iterator it=lines_map.begin();	
   for(;it!=lines_map.end(); it++) {
-		//INDEX in station list
+		str = it->second;
 	  miutil::trim(str);
 		// Append every line to 
 		lines.push_back(str);
@@ -195,7 +195,7 @@ void ObsRoad::readRoadData()
 	  size_t size = lines.size();
     for (size_t i = 0; i < size; i++)
     {
-      ofs << lines[i];
+      ofs << lines[i] << std::endl;
     }
 		ofs.close();
   }
