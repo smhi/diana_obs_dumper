@@ -114,7 +114,7 @@ void ObsRoad::readHeader()
 			line = "[COLUMNS";
 			lines.push_back(line);
 			// The fixed part..
-			line = "Name:id: Date:d: Time:t: Lat:lat: Lon:lon: data_type:s: auto:r: isdata:r: ";
+			line = "StationName:s: Name:id: Date:d: Time:t: Lat:lat: Lon:lon: data_type:s: auto:r: isdata:r: ";
 			// the dynamic part
 			// the data value parameters
 		for (i = 0; i < params->size(); i++)
