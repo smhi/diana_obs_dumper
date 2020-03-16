@@ -42,6 +42,7 @@
 #include <algorithm>
 #include <fstream>
 #include <vector>
+#include <iostream>
 
 //#define DEBUGPRINT 1
 
