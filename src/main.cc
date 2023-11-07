@@ -14,7 +14,7 @@
 
 using namespace std;
 
-#define _DEBUG
+//#define _DEBUG
 
 int main(int argc, char *argv[])
 {
